@@ -45,17 +45,17 @@ public class Library {
         Runnable runnable2 = () -> {
             library.writeBook("Let us Java");
         };
-        Thread thread1 = new Thread(runnable);
-        Thread thread2 = new Thread(runnable2);
-        Thread thread3 = new Thread(runnable);
-        Thread thread4 = new Thread(runnable2);
-        Thread waitingThread = new Thread(thread1);
+        Thread reader1 = new Thread(runnable);
+        Thread reader2 = new Thread(runnable2);
+        Thread reader3 = new Thread(runnable);
+        Thread writer1 = new Thread(runnable2);
+        Thread writingThread = new Thread(reader1);
 
-        thread1.start();
-        thread2.start();
-        thread3.start();
-        thread4.start();
-        waitingThread.start();
+        reader1.start();
+        reader2.start();
+        reader3.start();
+        writer1.start();
+        writingThread.start();
 
     }
 }
